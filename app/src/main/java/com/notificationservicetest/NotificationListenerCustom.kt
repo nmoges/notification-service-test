@@ -5,6 +5,9 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
 
+/**
+ * Subclass of [NotificationListenerService] used to catch post/remove notification events.
+ */
 class NotificationListenerCustom: NotificationListenerService() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -14,15 +17,18 @@ class NotificationListenerCustom: NotificationListenerService() {
 
     override fun onNotificationPosted(sbn: StatusBarNotification?) {
         super.onNotificationPosted(sbn)
-        Log.d("NOTIFICATION", "NOTIFICATION POSTED")
+        Log.d("NOTIFICATION_SERVICE", "NOTIFICATION POSTED")
         sbn?.let { displayOnLogNotificationInfo(it) }
     }
 
     override fun onNotificationRemoved(sbn: StatusBarNotification?) {
         super.onNotificationRemoved(sbn)
-        Log.d("NOTIFICATION", "NOTIFICATION REMOVED")
+        Log.d("NOTIFICATION_SERVICE", "NOTIFICATION REMOVED")
     }
 
+    /**
+     * Test function to display on log notification information.
+     */
     private fun displayOnLogNotificationInfo(sbn: StatusBarNotification) {
         Log.i("NOTIFICATION_SERVICE", "--------------------------------------------------")
         Log.i("NOTIFICATION_SERVICE", "Package name : ${sbn.packageName}")
