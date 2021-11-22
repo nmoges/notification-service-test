@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NotificationServiceTest</string>
+    <!-- AndroidManifest.xml -->
+    <string name="service_name">Service notification test</string>
+    <!-- activity_main.xml -->
+    <string name="btn_request_access">REQUEST ACCESS</string>
+    <string name="btn_stop_service">STOP SERVICE</string>
+    <string name="btn_notification_test">NOTIFICATION TEST</string>
+    <string name="notification_access_denied">Notification Listener : permission denied</string>
+    <string name="notification_access_granted">Notification Listener : permission granted</string>
+    <!-- NotificationCreator.kt -->
+    <string name="notification_title">Notification title</string>
+    <string name="notification_message">Notification message</string>
+</resources>
